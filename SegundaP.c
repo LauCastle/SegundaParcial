@@ -2,8 +2,9 @@
 //Examen Segunda parcial 
 
 #include <stdio.h>
-int arreglo[10];
-int indexmin=0;
+#include <stdlib.h> //faltó agregar libreria
+
+int arreglo[10], n=10; //faltó agregar
 
 void intercambio(int *a, int *b){
 	int temp;
@@ -11,16 +12,19 @@ void intercambio(int *a, int *b){
 	*a=*b;
 	*b=temp;
 }
-void problema(int min, int i, int j, int arreglo[]){
-	int n=20;
-	for(j=i+1; j=n; j++)
-	{
-		if (arreglo[j]<arreglo[min]){
-			min=j;
+void problema(int n, int arreglo[]){
+	for (int i=0; i<n; i++){
+		int min = i; //faltó declarar variable min
+	
+		for(int j=i+1; j<=n; j++)
+		{
+			if (arreglo[j] < arreglo[min]){
+				min=j;
+			}
 		}
-	}
-	if (indexmin !=1){
-		intercambio(&arreglo[min], &arreglo[i]);
+		if (min !=i){
+			intercambio(&arreglo[min], &arreglo[i]);
+		}
 	}
 }
 
@@ -54,12 +58,11 @@ void pantalla(int arreglo[], int n){
 }
 
 void main(){
-	int n=0;
-	int t=10;
-	int num=0;
 
-	leer_archivo(arreglo,t);
-	pantalla(arreglo,t);
-	problema(n,t);
-	pantalla(arreglo,t);
+	leer_archivo();
+
+	pantalla(arreglo,n);
+	problema(n,arreglo);
+	pantalla(arreglo,n);
+
 }
