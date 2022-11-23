@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h> //faltó agregar libreria
 
-int arreglo[10], n=10; //faltó agregar
+int arreglo[10], n=10;//faltó
 
 void intercambio(int *a, int *b){
 	int temp;
@@ -13,8 +13,8 @@ void intercambio(int *a, int *b){
 	*b=temp;
 }
 void problema(int n, int arreglo[]){
-	for (int i=0; i<n; i++){
-		int min = i; //faltó declarar variable min
+	for(int i=0; i<n; i++){
+	 	int min=i; //faltó declarar
 	
 		for(int j=i+1; j<=n; j++)
 		{
@@ -58,7 +58,7 @@ void pantalla(int arreglo[], int n){
 }
 
 void main(){
-
+	
 	leer_archivo();
 
 	pantalla(arreglo,n);
