@@ -8,6 +8,25 @@
 #define WIDTH 700
 #define HEIGHT 700
 
+//estructura del nodo
+struct node{
+	struct node *left;
+	struct node *right;
+	int data;
+};
+
+struct node* new_node(int data){
+	struct node *new = alloc(sizeof(struct node));
+	new->left = NULL;
+	new->right = NULL;
+	new->data = data;
+	return new;
+}
+void inser_node(struct node* node, int data){
+	if (data < node->left){
+		if (node->left ==NULL)
+			node->left
+
 int main(){
 	//variables
 	bool running = true;
