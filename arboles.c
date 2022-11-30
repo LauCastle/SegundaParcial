@@ -10,7 +10,6 @@ struct nodo{
 	int info;
 };
 
-
 struct nodo* nuevoNodo(int dato){
 	size_t tam_nodo = sizeof(struct nodo);
 
@@ -22,6 +21,7 @@ struct nodo* nuevoNodo(int dato){
 
 	return nuevo_nodo;
 }
+
 void insertarNodo(struct nodo* nd, int dato)
 {
 	if (dato > nd -> info){
@@ -38,6 +38,11 @@ void insertarNodo(struct nodo* nd, int dato)
 	}
 	}
 }
+
+void imprimirNodo(struct nodo* nd){
+	
+}
+
 int main()
 {
 	struct nodo* raiz=NULL;
