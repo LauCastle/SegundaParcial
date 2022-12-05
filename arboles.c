@@ -39,16 +39,41 @@ void insertarNodo(struct nodo* nd, int dato)
 	}
 }
 
-void imprimirNodo(struct nodo* nd){
-	
+void preorden(struct nodo* nd){
+	if(nd != NULL){
+		printf("%d, ",nd->info);
+		preorden(nd->hijo_izq);
+		preorden(nd->hijo_der);
+	}
 }
 
+void inorden(struct nodo* nd){
+	if(nd != NULL){
+		inorden(nd->hijo_izq);
+		printf("%d, ",nd->info);
+		inorden(nd->hijo_der);
+	}
+}
+
+void postorden(struct nodo* nd){
+	if(nd !=NULL){
+		postorden(nd->hijo_izq);
+		postorden(nd->hijo_der);
+		printf("%d, ",nd->info);
+	}
+}
 int main()
 {
 	struct nodo* raiz=NULL;
 	raiz = nuevoNodo(8);
 	insertarNodo(raiz,3);
 	insertarNodo(raiz,20);
-
+	printf("\nPre-orden:\n");
+	preorden(raiz);
+	printf("\nIn-orden:\n");
+	inorden(raiz);	
+	printf("\nPost-orden:\n");
+	postorden(raiz);
+	printf("\n\n");
 	return 0;
 }
